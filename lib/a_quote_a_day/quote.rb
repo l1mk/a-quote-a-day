@@ -46,6 +46,7 @@ class Quote
     
     def call 
       puts @quote
+      puts " "
       save?
     end
     
@@ -63,6 +64,19 @@ class Quote
     }
       if finding.all?(false)
         puts "try a different keyword"
+      end
+    end
+    
+    def self.find_by_categorie(categorie)
+    finding = @@all.map {|q| 
+    if q.categorie == categorie
+    puts "#{q.quote}. Category: #{q.categorie} quote"
+    else
+    false  
+    end
+    }
+      if finding.all?(false)
+        puts "try a different categorie"
       end
     end
   
