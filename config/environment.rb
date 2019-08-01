@@ -6,4 +6,4 @@ require "./lib/a_quote_a_day/scraper"
 
 require "nokogiri"
 require "open-uri"
-#require "pry"
+require "pry"
