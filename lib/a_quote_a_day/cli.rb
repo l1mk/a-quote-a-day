@@ -1,31 +1,38 @@
 #CLI controller
+
 class AQuoteADay::CLI
   
   @@favorite = []
   
   def call
-    quote
-    save
+    quote = Quote.new
+    quote.call
     menu
   end
 
-  def quote
-    puts "random quote"
-  end
+  #def quote(random = "here is a random quote")
+  #  @quote = random
+  #  puts @quote
+  #end
 
-  def save
-    puts "would you like to save this quote?"
-    input = gets.strip.downcase
-    if input == "yes" || input == "y"
-    @@favorite << quote
-    "quote is now saved"
-    elsif input == "no" || input == "n"
-    " "
-    else
-    puts "invalid answer"
-    save
-    end
-  end
+  #def saving
+  #  @@favorite << @quote
+  #end
+
+  #def save?
+  #  puts "would you like to save this quote?"
+  #  input = gets.strip.downcase
+  #    if input == "yes" || input == "y"
+  #      saving
+  #      puts "quote is now saved"
+  #      puts " "
+  #    elsif input == "no" || input == "n"
+  #      puts " "
+  #    else
+  #      puts "invalid answer"
+  #      save?
+  #    end
+  #end
   
   def menu
     puts "Welcome to A Quote A Day"
@@ -65,21 +72,37 @@ class AQuoteADay::CLI
 DOC
   input = gets.strip.downcase
   if input == "1"
-      puts "Motivational quote" 
+      Quote.new("Motivational quote", categorie = "Motivational").call
+      puts " "
+      categories
     elsif input == "2"
-      puts "Love quote" 
+      Quote.new("Love quote", categorie = "Love").call
+      puts " "
+      categories
     elsif input == "3"
-      puts "Inspirational quote"  
+      Quote.new("Inspirational quote", categorie = "Inspirational").call
+      puts " "
+      categories
     elsif input == "4"
-      puts "Determination quote" 
+      Quote.new("Determination quote", categorie = "Determination").call
+      puts " "
+      categories
     elsif input == "5"
-      puts "Poetry quote"    
+      Quote.new("Poetry quote", categorie = "Poetry").call 
+      puts " "
+      categories
     elsif input == "6"
-      puts "Teamwork quote" 
+      Quote.new("Teamwork quote", categorie = "Teamwork").call
+      puts " "
+      categories
     elsif input == "7"
-      puts "Sports quote" 
+      Quote.new("Sports quote", categorie = "Sports").call
+      puts " "
+      categories
     elsif input == "8"
-      puts "Movies quote" 
+      Quote.new("Movies quote", categorie = "Movies").call
+      puts " "
+      categories
     elsif input == "9"
       menu
       
@@ -89,4 +112,46 @@ DOC
     end
   end
 
+  def favorites
+    puts "What would you like to do?"
+    puts <<-DOC
+1. List of all favorites
+2. Print last
+3. Erase last
+4. Erase all
+5. Find by Keyword
+6. Back
+DOC
+      input = gets.strip.downcase
+      if input == "1"
+        puts Quote.favorite 
+        favorites
+      elsif input == "2"
+        puts Quote.call_last
+        favorites
+      elsif input == "3"
+        Quote.delete_last
+        puts Quote.favorite
+        favorites
+      elsif input == "4"
+        Quote.clear
+        favorites
+      elsif input == "5"
+      puts "Write down a keyword"
+      key = gets.strip
+        Quote.find_by_keyword(key)
+        favorites
+      elsif input == "6"
+        menu   
+      else 
+        puts "invalid answer"
+        favorites
+      end
+  end
+  
+  #def find_by_keyword(key)
+  #quote.include?(key)
+  #puts quote
+  #end
+  
 end
