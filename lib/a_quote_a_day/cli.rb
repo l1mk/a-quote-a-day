@@ -8,9 +8,9 @@ class AQuoteADay::CLI
   end
 
   def menu
-    puts "Welcome to A Quote A Day"
+    puts "**Welcome to A Quote A Day!**"
     puts "" 
-    puts "Here is your options, please type the number of what do you want to access"
+    puts "Here are your options, please type the number of what do you want to access."
     puts ""
     puts <<-DOC
 1. Categories
@@ -24,16 +24,16 @@ class AQuoteADay::CLI
     elsif input == "2"
       favorites 
     elsif input == "3"
-    puts "Enjoy the rest of your day"
+    puts "Enjoy the rest of your day!."
       exit 
     else
-      puts "invalid answer"
+      puts "Invalid answer!."
       menu
     end
   end
   
   def categories
-    puts "Here is the list of categories, choose the number of the option you want"
+    puts "Here is the list of categories, choose the number of the option you want."
     puts ""
     puts <<-DOC
 1. Motivational
@@ -42,7 +42,7 @@ class AQuoteADay::CLI
 4. Wisdom
 5. Happiness 
 6. Gratitude
-7. Love
+7. Frienship 
 8. Kindness
 9. Back to Main Menu
 DOC
@@ -99,13 +99,13 @@ DOC
     elsif input == "9"
       menu 
     else
-      puts "invalid answer"
+      puts "Invalid answer!"
       categories
     end
   end
 
   def favorites
-    puts "What would you like to do?"
+    puts "What would you like to do?."
     puts ""
     puts <<-DOC
 1. List of all favorites
@@ -133,13 +133,13 @@ DOC
         Quote.clear
         favorites
       elsif input == "5"
-      puts "Write down a keyword"
+      puts "Write down a keyword."
       puts ""
       key = gets.strip.downcase
         Quote.find_by_keyword(key)
         favorites
       elsif input == "6"
-      puts "Write down a categorie"
+      puts "Write down a Categorie."
       puts ""
       categorie = gets.strip.downcase
         Quote.find_by_categorie(categorie)
@@ -147,7 +147,7 @@ DOC
       elsif input == "7"
         menu   
       else 
-        puts "invalid answer"
+        puts "Invalid answer!."
         favorites
       end
   end

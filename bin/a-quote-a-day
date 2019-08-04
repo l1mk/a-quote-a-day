@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require "./lib/a_quote_a_day"
+require_relative "../lib/a_quote_a_day"
 
 AQuoteADay::CLI.new.call
 

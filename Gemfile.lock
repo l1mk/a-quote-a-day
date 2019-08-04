@@ -41,7 +41,7 @@ DEPENDENCIES
   pry
   rake (~> 10.0)
   rspec
-  worlds-best-restaurants!
+  a-quote-a-day!
 
 BUNDLED WITH
    1.17.3

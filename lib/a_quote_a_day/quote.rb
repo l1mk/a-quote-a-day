@@ -21,16 +21,16 @@ class Quote
   end
     
   def save?
-    puts "would you like to save this quote?"
+    puts "Would you like to save this Quote?."
     input = gets.strip.downcase
       if input == "yes" || input == "y"
         self.saving
-        puts "quote is now saved"
+        puts "...Quote is now saved!."
         puts " "
       elsif input == "no" || input == "n"
         puts " "
       else
-        puts "invalid answer"
+        puts "Invalid answer!."
         save?
       end
   end
@@ -64,7 +64,7 @@ class Quote
     }
     
     if finding.all?(false)
-        puts "try a different keyword"
+        puts "Please, try a different keyword."
     end
   end
   
@@ -78,7 +78,7 @@ class Quote
     }
     
     if finding.all?(false)
-      puts "try a different categorie"
+      puts "Please, try a different categorie."
     end
   end
   

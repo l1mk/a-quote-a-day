@@ -20,6 +20,9 @@ Or install it yourself as:
 
 ## Usage
 
+Type the below and follow the on screen prompts.
+$ a-quote-a-day
+
 As soon as the program start, a random quote will prompt in your screen and a following instruction asking if you want to save the quote to your favorites. After that you will be asked if you want another random quote, if not is selected you will be taken to the menu were you can choose from different categories of quotes or scroll to your favorites or simple exit.
 
 ## Development

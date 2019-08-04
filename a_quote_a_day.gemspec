@@ -1,7 +1,7 @@
 require_relative "./lib/a_quote_a_day/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "a_quote_a_day"
+  spec.name          = "a-quote-a-day"
   spec.version       = AQuoteADay::VERSION
   spec.date          = "2019-07-31"
   spec.authors       = ["'juan siu'"]
