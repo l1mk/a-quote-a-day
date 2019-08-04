@@ -4,7 +4,7 @@ require "./lib/a_quote_a_day/quote"
 require "./lib/a_quote_a_day/scraper"
 
 require "bundler"
-Bundler.require 
+#Bundler.require 
 
 require "nokogiri"
 require "open-uri"

@@ -3,7 +3,7 @@ class Quote
   @@all = []
   
   def initialize(quote = "random quote", categorie = nil, url = "www.com")
-      @quote = quote.downcase
+      @quote = quote
       @categorie = categorie
       @url = url
   end
@@ -45,7 +45,7 @@ class Quote
   end
     
   def call 
-    puts @quote
+    puts "'#{@quote}.'"
     puts " "
     save?
   end
@@ -56,7 +56,7 @@ class Quote
     
   def self.find_by_keyword(keyword)
     finding = @@all.map {|q| 
-    if q.quote.include?(keyword)
+    if q.quote.downcase.include?(keyword)
     puts q.quote
     else
     false  

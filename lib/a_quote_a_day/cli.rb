@@ -85,9 +85,9 @@ DOC
       puts " "
       categories
     elsif input == "7"
-      new = Scraper.new("http://wisdomquotes.com/love-quotes/").make_quote
+      new = Scraper.new("http://wisdomquotes.com/friendship-quotes/").make_quote
       new.call
-      new.categorie = "love"
+      new.categorie = "friendship"
       puts " "
       categories
     elsif input == "8"
