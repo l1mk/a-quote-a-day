@@ -14,7 +14,7 @@ class Scraper
   end
   
   def make_quote
-    Quote.new(@quote, categorie = nil, @url)
+    Quote.new(@quote, categorie = "inspirational", @url)
   end
     
   def initialize(html = "http://wisdomquotes.com/inspirational-quotes/")

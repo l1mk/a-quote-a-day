@@ -51,7 +51,7 @@ DOC
     if input == "1"
       new = Scraper.new("http://wisdomquotes.com/motivational-quotes/").make_quote
       new.call
-      new.categorie = "motivational quote"
+      new.categorie = "motivational"
       puts " "
       categories
     elsif input == "2"

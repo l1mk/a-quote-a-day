@@ -2,7 +2,7 @@ class Quote
   attr_accessor :quote, :categorie, :url 
   @@all = []
   
-  def initialize(quote = "random quote", categorie = nil, url = "www.com")
+  def initialize(quote = "random quote", categorie = "inspirational", url = "www.com")
       @quote = quote
       @categorie = categorie
       @url = url
@@ -13,7 +13,7 @@ class Quote
   end
     
   def self.favorite
-      @@all.map {|q| q.quote}
+      @@all.map.with_index {|q,i| puts "#{i+1}.- '#{q.quote}',(#{q.categorie} quote from #{q.url})."}
   end
     
   def saving
@@ -71,7 +71,7 @@ class Quote
   def self.find_by_categorie(categorie)
     finding = @@all.map {|q| 
     if q.categorie == categorie
-    puts "#{q.quote}. Category: #{q.categorie} quote"
+    puts "-'#{q.quote}'-, Category: #{q.categorie} quote."
     else
     false  
     end
