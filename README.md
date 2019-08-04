@@ -7,7 +7,7 @@ Welcome to A Quote A Day Program, In it, you can call random quotes from the int
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'a_quote_a_day'
+gem 'a-quote-a-day'
 ```
 
 And then execute:
@@ -16,7 +16,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install a_quote_a_day
+    $ gem install a-quote-a-day
 
 ## Usage
 
