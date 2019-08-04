@@ -2,25 +2,25 @@ class Quote
   attr_accessor :quote, :categorie, :url 
   @@all = []
   
-    def initialize(quote = "random quote", categorie = nil, url = "www.com")
+  def initialize(quote = "random quote", categorie = nil, url = "www.com")
       @quote = quote.downcase
       @categorie = categorie
       @url = url
-    end
+  end
   
-    def self.all
+  def self.all
       @@all
-    end
+  end
     
-    def self.favorite
+  def self.favorite
       @@all.map {|q| q.quote}
-    end
+  end
     
-    def saving
+  def saving
       @@all << self
-    end
+  end
     
-    def save?
+  def save?
     puts "would you like to save this quote?"
     input = gets.strip.downcase
       if input == "yes" || input == "y"
@@ -33,28 +33,28 @@ class Quote
         puts "invalid answer"
         save?
       end
-    end
+  end
     
-    def self.clear
-      @@all = []
-    end
+  def self.clear
+    @@all = []
+  end
     
-    def self.delete_last
-      @@all.pop
-      @@all 
-    end
+  def self.delete_last
+    @@all.pop
+    @@all 
+  end
     
-    def call 
-      puts @quote
-      puts " "
-      save?
-    end
+  def call 
+    puts @quote
+    puts " "
+    save?
+  end
     
-    def self.call_last
-      puts @@all.last.quote
-    end
+  def self.call_last
+    puts @@all.last.quote
+  end
     
-    def self.find_by_keyword(keyword)
+  def self.find_by_keyword(keyword)
     finding = @@all.map {|q| 
     if q.quote.include?(keyword)
     puts q.quote
@@ -62,12 +62,13 @@ class Quote
     false  
     end
     }
-      if finding.all?(false)
-        puts "try a different keyword"
-      end
-    end
     
-    def self.find_by_categorie(categorie)
+    if finding.all?(false)
+        puts "try a different keyword"
+    end
+  end
+  
+  def self.find_by_categorie(categorie)
     finding = @@all.map {|q| 
     if q.categorie == categorie
     puts "#{q.quote}. Category: #{q.categorie} quote"
@@ -75,10 +76,11 @@ class Quote
     false  
     end
     }
-      if finding.all?(false)
-        puts "try a different categorie"
-      end
+    
+    if finding.all?(false)
+      puts "try a different categorie"
     end
+  end
   
     
 end

@@ -1,4 +1,3 @@
-
 class Scraper
   attr_accessor :quote, :url 
   

@@ -1,8 +1,5 @@
-#CLI controller
-
 class AQuoteADay::CLI
-  
-  @@favorite = []
+ @@favorite = []
   
   def call
     new = Scraper.new.make_quote
@@ -12,7 +9,9 @@ class AQuoteADay::CLI
 
   def menu
     puts "Welcome to A Quote A Day"
+    puts "" 
     puts "Here is your options, please type the number of what do you want to access"
+    puts ""
     puts <<-DOC
 1. Categories
 2. Favorites
@@ -35,6 +34,7 @@ class AQuoteADay::CLI
   
   def categories
     puts "Here is the list of categories, choose the number of the option you want"
+    puts ""
     puts <<-DOC
 1. Motivational
 2. Life 
@@ -46,8 +46,9 @@ class AQuoteADay::CLI
 8. Kindness
 9. Back to Main Menu
 DOC
-  input = gets.strip.downcase
-  if input == "1"
+
+     input = gets.strip.downcase
+    if input == "1"
       new = Scraper.new("http://wisdomquotes.com/motivational-quotes/").make_quote
       new.call
       new.categorie = "motivational quote"
@@ -96,8 +97,7 @@ DOC
       puts " "
       categories
     elsif input == "9"
-      menu
-      
+      menu 
     else
       puts "invalid answer"
       categories
@@ -106,6 +106,7 @@ DOC
 
   def favorites
     puts "What would you like to do?"
+    puts ""
     puts <<-DOC
 1. List of all favorites
 2. Print last
@@ -115,14 +116,12 @@ DOC
 6. Find by Category
 7. Back
 DOC
-      input = gets.strip.downcase
-      if input == "1"
+    input = gets.strip.downcase
+      if input == "0"
+        puts Quote.all
+      elsif input == "1"
         puts Quote.favorite 
         favorites
-        
-      elsif input == "0"
-      puts Quote.all
-      
       elsif input == "2"
         puts Quote.call_last
         favorites
@@ -135,11 +134,13 @@ DOC
         favorites
       elsif input == "5"
       puts "Write down a keyword"
+      puts ""
       key = gets.strip.downcase
         Quote.find_by_keyword(key)
         favorites
       elsif input == "6"
       puts "Write down a categorie"
+      puts ""
       categorie = gets.strip.downcase
         Quote.find_by_categorie(categorie)
         favorites
@@ -150,5 +151,4 @@ DOC
         favorites
       end
   end
-
 end

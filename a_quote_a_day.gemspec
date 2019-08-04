@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = "Best quotes of the internet"
   spec.description   = "Provides with a quote by request on different themes and allow a curated list to be saved"
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.homepage      = "https://github.com/l1mk/a_quote_a_day"
   spec.license       = "MIT"
   s.executables << 'a-quote-a-day'
 
