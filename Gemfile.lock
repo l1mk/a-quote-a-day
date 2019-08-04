@@ -10,7 +10,7 @@ GEM
     diff-lcs (1.2.5)
     method_source (0.8.2)
     mini_portile2 (2.0.0)
-    nokogiri (1.6.7.1)
+    nokogiri (1.8.5.1)
       mini_portile2 (~> 2.0.0.rc2)
     pry (0.10.3)
       coderay (~> 1.1.0)
@@ -37,7 +37,7 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 1.10)
-  nokogiri
+  nokogiri (~> 1.8)
   pry
   rake (~> 10.0)
   rspec
