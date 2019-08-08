@@ -1,5 +1,5 @@
 class AQuoteADay::CLI
- @@favorite = []
+@@favorite = []
 @@types = ["peace", "life", "short", "happiness", "gratitude", "friendship", "kindness", "words-of-wisdom"]
 
   def call

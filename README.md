@@ -4,24 +4,18 @@ Welcome to A Quote A Day Program, In it, you can call random quotes from the int
 
 ## Installation
 
-Add this line to your application's Gemfile:
+From the website https://github.com/l1mk/a-quote-a-day
+Click clone or download button and clone with SSH the link:
+git@github.com:l1mk/a-quote-a-day.git
 
-```ruby
-gem 'a-quote-a-day'
-```
+Go to your command line and put the following:
+$ git clone git@github.com:l1mk/a-quote-a-day.git
 
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install a-quote-a-day
 
 ## Usage
-
+Make sure you are on the folder a-quote-a-day (use the command $ cd a-quote-a-day)
 Type the below and follow the on screen prompts.
-$ a-quote-a-day
+$ ./bin/a-quote-a-day
 
 As soon as the program start, a random quote will prompt in your screen and a following instruction asking if you want to save the quote to your favorites. After that you will be asked if you want another random quote, if not is selected you will be taken to the menu were you can choose from different categories of quotes or scroll to your favorites or simple exit.
 
